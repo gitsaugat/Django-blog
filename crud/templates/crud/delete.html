@@ -1,5 +1,5 @@
 {%extends 'crud/base.html'%} {%block content%} {% for post in posts %}
-<div class="container p-2">
+<div class="container">
   <div class="card" style="width: 70rem">
     <div class="card-body">
       <h5 class="card-title">{{post.title}}</h5>
@@ -7,8 +7,11 @@
         Posted By {{post.user.username}} At {{post.date_published}}
       </h6>
       <p class="card-text">{{post.content}}</p>
-      <a href="#" class="card-link">Delete </a>
-      <a href="#" class="card-link">Update</a>
+      <a
+        href="/post/delete/{{post.id}}"
+        class="btn btn-outline-danger float-right"
+        >Delete
+      </a>
     </div>
   </div>
 </div>

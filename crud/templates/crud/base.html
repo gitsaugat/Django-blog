@@ -17,12 +17,12 @@
     />
 
     {% if title %}
-    <title>{title}</title>
+    <title>{{title}}</title>
     {%endif%}
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Saugat's Blog</a>
+      <a class="navbar-brand" href="/">Saugat's Blog</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -85,10 +85,10 @@
                       Post
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Create</a>
-                        <a class="dropdown-item" href="#"> Update </a>
+                        <a class="dropdown-item" href="/posts/create">Create</a>
+                        <a class="dropdown-item" href="posts/update/"> Update </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Delete</a>
+                        <a class="dropdown-item" href="/posts/delete">Delete</a>
                       </div>
                   <li class="nav-item">
                     <a

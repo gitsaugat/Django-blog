@@ -31,3 +31,7 @@ class UserProfile(models.Model):
 
         return f'{self.user.username} profile'
 
+
+class Updates(models.Model):
+
+    pass

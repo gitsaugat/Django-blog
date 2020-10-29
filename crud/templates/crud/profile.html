@@ -1,0 +1,17 @@
+{%extends 'crud/base.html'%} {% load crispy_forms_tags %} {%block content%}
+<div class="container" style="padding-top: 10px">
+  <div class="card" style="width: 50rem; margin: auto">
+    <div class="card-body">
+      <img
+        class="img-rounded"
+        height="200px"
+        width="300px"
+        style="border-radius: 100%"
+        src="{{profile.image.url}}"
+      />
+      <h5 class="card-title">{{user.username}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{user.email}}</h6>
+    </div>
+  </div>
+</div>
+{%endblock%}

@@ -51,7 +51,7 @@
           
          
         </ul>
-       
+       {% if user.is_authenticated %}
         <nav >
             <ul class = "navbar-nav">
             <li class="nav-item dropdown">
@@ -66,8 +66,9 @@
                 >
                   User
                 </a>
+
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="/profile">Profile</a>
                     <a class="dropdown-item" href="#"> Update Bio </a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Change Password</a>
@@ -106,7 +107,7 @@
                       href="#"
                       tabindex="-1"
                       aria-disabled="true"
-                      >Welcome Saugat</a
+                      ><b>Welcome  , {{user.username}}</b>  </a
                     >
                   </li>
 
@@ -114,7 +115,34 @@
 
                   </ul>
                 </nav>
+                {%else%}
+                <nav class = "navbar-nav">
+                <li class="nav-item">
+                    <a
+                      class="nav-link "
+                      href="/accounts/login"
+                      tabindex="-1"
+                      aria-disabled="true"
+                      >Login</a
+                    >
+                  </li>
+
+                 
+
+                  </ul>
+
+                {%endif%}
           
+      </div>
+    </nav>
+      <div class = "container" style="margin: auto;">
+        {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
       </div>
     </nav>
     {%block content%} {%endblock%}

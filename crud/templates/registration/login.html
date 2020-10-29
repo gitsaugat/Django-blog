@@ -1,0 +1,21 @@
+{%extends 'crud/base.html'%} {% load crispy_forms_tags %} {%block content%}
+<div class="container" style="padding-top: 100px">
+  <div class="card" style="width: 50rem; padding-top: 12px; margin: auto">
+    <div class="card-body">
+      <h5 class="card-title">Login Form</h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        Please enter your credentials
+      </h6>
+      <form method="POST">
+        {%csrf_token%} {{form | crispy}}
+        <input
+          type="submit"
+          style="margin-left: 20rem"
+          class="btn btn-outline-danger"
+          value="Login"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}
